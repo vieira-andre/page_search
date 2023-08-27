@@ -20,9 +20,7 @@ export baseUrl
 export searchTerm
 
 pagesWithTerm=$(seq 2 $pageLimit | xargs -P10 -I {} bash -c 'process_page "$@"' _ {})
-
 pagesWithTerm=$(echo "$pagesWithTerm" | tr '\n' ',')
-
 pagesWithTerm=$(echo "$pagesWithTerm" | sed 's/,$//' | sed 's/,/, /g')
 
 echo -e "\nPages containing the term '${searchTerm}': ${pagesWithTerm}"
