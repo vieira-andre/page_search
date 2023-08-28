@@ -17,3 +17,7 @@ It was motivated by me trying to look for discussions about certain subjects in 
     - Fetches the content of the URL using `curl`.
     - Checks if the page content contains the `searchTerm` (case-insensitive).
     - If the term is found, the page number is printed.
+
+3. **Parallel processing**:
+    - The `xargs` command is used to process multiple pages concurrently (up to 10 in parallel as specified by `-P10`).
+    - The `seq` command generates a sequence of numbers starting from 2 up to the specified `pageLimit`.
